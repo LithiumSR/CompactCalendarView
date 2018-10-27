@@ -918,7 +918,6 @@ class CompactCalendarController {
                     dayPaint.setTypeface(Typeface.DEFAULT_BOLD);
                     dayPaint.setStyle(Paint.Style.FILL);
                     dayPaint.setColor(calenderTextColor);
-                    canvas.drawText(dayColumnNames[colDirection], xPosition, paddingHeight, dayPaint);
                     canvas.drawText(shouldUppercaseWeekDaysHeader ? dayColumnNames[dayColumn].toUpperCase() : dayColumnNames[dayColumn], xPosition, paddingHeight, dayPaint);
                     dayPaint.setTypeface(Typeface.DEFAULT);
                 }
