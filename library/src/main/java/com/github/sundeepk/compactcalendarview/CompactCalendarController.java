@@ -78,6 +78,7 @@ class CompactCalendarController {
     private boolean shouldDrawIndicatorsBelowSelectedDays = false;
     private boolean displayOtherMonthDays = false;
     private boolean shouldSelectFirstDayOfMonthOnScroll = true;
+    private boolean shouldUppercaseWeekDaysHeader = false;
     private boolean isRtl = false;
 
     private CompactCalendarViewListener listener;
@@ -160,6 +161,7 @@ class CompactCalendarController {
                 currentSelectedDayIndicatorStyle = typedArray.getInt(R.styleable.CompactCalendarView_compactCalendarCurrentSelectedDayIndicatorStyle, FILL_LARGE_INDICATOR);
                 displayOtherMonthDays = typedArray.getBoolean(R.styleable.CompactCalendarView_compactCalendarDisplayOtherMonthDays, displayOtherMonthDays);
                 shouldSelectFirstDayOfMonthOnScroll = typedArray.getBoolean(R.styleable.CompactCalendarView_compactCalendarShouldSelectFirstDayOfMonthOnScroll, shouldSelectFirstDayOfMonthOnScroll);
+                shouldUppercaseWeekDaysHeader = typedArray.getBoolean(R.styleable.CompactCalendarView_compactCalendarUppercaseWeekDaysHeader, shouldUppercaseWeekDaysHeader);
             } finally {
                 typedArray.recycle();
             }
@@ -917,6 +919,7 @@ class CompactCalendarController {
                     dayPaint.setStyle(Paint.Style.FILL);
                     dayPaint.setColor(calenderTextColor);
                     canvas.drawText(dayColumnNames[colDirection], xPosition, paddingHeight, dayPaint);
+                    canvas.drawText(shouldUppercaseWeekDaysHeader ? dayColumnNames[dayColumn].toUpperCase() : dayColumnNames[dayColumn], xPosition, paddingHeight, dayPaint);
                     dayPaint.setTypeface(Typeface.DEFAULT);
                 }
             } else {
