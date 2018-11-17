@@ -1,4 +1,4 @@
-# CompactCalendarView [![Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)](https://travis-ci.org/SundeepK/CompactCalendarView)
+# CompactCalendarView
 CompactCalendarView is a simple calendar view which provides scrolling between months. It's based on Java's Date and Calendar classes. It provides a simple api to query for dates and listeners for specific events.  For example, when the calendar has scrolled to a new month or a day has been selected.
 Still under active development.
 
@@ -6,58 +6,6 @@ Still under active development.
 
 # Contributing  
 Please raise an issue of the requirement so that a discussion can take before any code is written, even if you intend to raise a pull request. Please see setup for testing.
-
-# Testing
-CompactCalendarView makes use of screenshot-tests-for-android (https://github.com/facebook/screenshot-tests-for-android). This is for UI testing. Since screenshot-tests-for-android takes screenshots, we need a way to ensure images can be reproduced consistently. To do this, a specific emulator is used to run tests.
-Unfortunately, an older emulator is used for now. New pull requests which change functionality some how should aim to create new screenshot tests or unit tests if possible. To run this locally, run the below commands:
-
-Pre-requisite (Also refer to .travis.yml):
-- Python
-- Python pillow installed 
-- Install android-19 (can be done through android sdk manager or command line).
-
-Android 19 emulator is used because it seems to be a fast enough on travis-ci and because x86 emulators are not supported on travis-ci. Newer android version is possible but build times will increase.
-
-Install the abi and accept:
- ```bash
-$ $ANDROID_HOME/tools/bin/sdkmanager 'system-images;android-22;default;armeabi-v7a'
- ```
-
-Create the emulator:
-```bash
-$ echo no | $ANDROID_HOME/tools/bin/avdmanager create avd --force -n testCompactCalendarEmulator -k "system-images;android-22;default;armeabi-v7a"
-```
-
-Create sd card (creating in current dir):
-Any problems with sdcard are best solved by deleting and trying again
-```bash
-$ mksdcard -l sdcard 100M sdcard
-```
-
-Run emulator (with out audio and window):
-```bash
-$ $ANDROID_HOME/emulator/emulator -avd testCompactCalendarEmulator -no-audio -no-window -sdcard sdcard &
-```
-
-Run emulator and watch(with audio and window):
-```bash
-$ $ANDROID_HOME/emulator/emulator -avd testCompactCalendarEmulator -sdcard sdcard 
-```
-
-Running the tests to verify that the current tests pass and to check which tests are not producing the same screenshot:
-```bash
-$ ./gradlew verifyMode screenshotTests 
-```
-
-To generate new screenshots if new tests have been added:
-```bash
-$ ./gradlew recordMode screenshotTests 
-```
-
-Run the unit tests like below:
-```bash
-$ ./gradlew test
-```
 
 ## Android studio emulator
 It's possible to test using android studio emulator. However, it must be android 19 and and 480x800 screen resolution. One example is the Nexus S emulator. Just start the emulator and execute the gradle commands to run the tests. Emulator should be found automatically.
@@ -154,7 +102,7 @@ It's possible to set the locale so that weekday column names are automatically s
 
 ```gradle
 dependencies {
-    compile 'com.github.sundeepk:compact-calendar-view:3.0.0'
+    implementation 'com.github.LithiumSR:CompactCalendarView:3.1'
 }
 ```
 
