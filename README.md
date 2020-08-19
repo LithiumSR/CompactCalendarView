@@ -2,7 +2,7 @@
 CompactCalendarView is a simple calendar view which provides scrolling between months. It's based on Java's Date and Calendar classes. It provides a simple api to query for dates and listeners for specific events.  For example, when the calendar has scrolled to a new month or a day has been selected.
 Still under active development.
 
-<img src="https://github.com/SundeepK/CompactCalendarView/blob/master/images/compact-calendar-view-example-multi-events.png" width="500">
+<img src="images/compact-calendar-view-example-multi-events.png" width="500">
 
 # Contributing  
 Please raise an issue of the requirement so that a discussion can take before any code is written, even if you intend to raise a pull request. Please see setup for testing.
@@ -13,7 +13,7 @@ It's possible to test using android studio emulator. However, it must be android
 # Open/Close animations
 The library supports opening/closing with or without animations. 
 
-![ScreenShot](https://github.com/SundeepK/CompactCalendarView/blob/master/images/compact_calendar_animation.gif)
+![ScreenShot](images/compact_calendar_animation.gif)
 
 # Example usage
 It is possible to change the appearance of the view via a few properties. This includes the background color, text color, textsize color of the current day and the color of the first day of the month.
@@ -86,7 +86,7 @@ Please see Sample app for full example.
 
 You can modify indicators using a preset of styles, below is an example, but few other combinations are also possible:
 
-![ScreenShot](https://github.com/SundeepK/CompactCalendarView/blob/master/images/compact-calendar-customised-indicators.png)
+![ScreenShot](images/compact-calendar-customised-indicators.png)
 
 Note that the calendar makes no attempt to de-duplicate events for the same exact DateTime. This is something that you must handle your self if it is important to your use case.
 
@@ -98,7 +98,7 @@ It's possible to set the locale so that weekday column names are automatically s
         compactCalendarView.setUseThreeLetterAbbreviation(true);
 ```
 
-<img src="https://github.com/SundeepK/CompactCalendarView/blob/master/images/chinese-locale-daynames.png" width="400">
+<img src="images/chinese-locale-daynames.png" width="400">
 
 ```gradle
 dependencies {
